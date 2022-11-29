@@ -11,4 +11,14 @@ public class springGetBeanTest {
         studentBen.seyHello();
         System.out.println(studentBen);
     }
+
+    /**
+     * spring DI 的setter注入测试
+     */
+    @Test
+    public void springBeanDITest(){
+        ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
+        Student st1 = ac.getBean("StudentBean1", Student.class);
+        System.out.println(st1);
+    }
 }

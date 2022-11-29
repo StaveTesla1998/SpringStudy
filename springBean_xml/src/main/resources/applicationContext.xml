@@ -3,5 +3,13 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="StudentBen" scope="singleton" class="com.qiji.pojo.Student"></bean>
+    <bean id="StudentBen" class="com.qiji.pojo.Student"></bean>
+
+    <bean id="StudentBean1" class="com.qiji.pojo.Student">
+<!--        setter注入,使用property标签-->
+        <property name="stuId" value="1"></property>
+        <property name="stuName" value="张三"></property>
+        <property name="age" value="23"></property>
+        <property name="sex" value="男"></property>
+    </bean>
 </beans>
