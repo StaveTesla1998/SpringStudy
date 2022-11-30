@@ -21,4 +21,14 @@ public class springGetBeanTest {
         Student st1 = ac.getBean("StudentBean1", Student.class);
         System.out.println(st1);
     }
+
+    /**
+     * 构造器注入
+     */
+    @Test
+    public void springBeanConstructTest(){
+        ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
+        Student st2 = ac.getBean("studentBean2", Student.class);
+        System.out.println(st2);
+    }
 }
