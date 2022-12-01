@@ -45,4 +45,11 @@ public class springGetBeanTest {
         Student st4 = ca.getBean("studentBean4", Student.class);
         System.out.println(st4);
     }
+
+    @Test
+    public void springBeanSetValueByInsideBeanTest(){
+        ApplicationContext ca = new ClassPathXmlApplicationContext("applicationContext.xml");
+        Student st5 = ca.getBean("studentBean5", Student.class);
+        System.out.println(st5);
+    }
 }
