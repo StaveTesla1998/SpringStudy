@@ -1,5 +1,7 @@
 package com.qiji.pojo;
 
+import java.util.Arrays;
+
 public class Student {
     private Integer stuId;
     private String stuName;
@@ -8,15 +10,18 @@ public class Student {
     private String sex;
     private Clazz clazz;
 
+    private String[] hobby;
+
     public Student() {
     }
 
-    public Student(Integer stuId, String stuName, Integer age, String sex, Clazz clazz) {
+    public Student(Integer stuId, String stuName, Integer age, String sex, Clazz clazz, String[] hobby) {
         this.stuId = stuId;
         this.stuName = stuName;
         this.age = age;
         this.sex = sex;
         this.clazz = clazz;
+        this.hobby = hobby;
     }
 
     public Integer getStuId() {
@@ -59,6 +64,14 @@ public class Student {
         this.clazz = clazz;
     }
 
+    public String[] getHobby() {
+        return hobby;
+    }
+
+    public void setHobby(String[] hobby) {
+        this.hobby = hobby;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -67,6 +80,7 @@ public class Student {
                 ", age=" + age +
                 ", sex='" + sex + '\'' +
                 ", clazz=" + clazz +
+                ", hobby=" + Arrays.toString(hobby) +
                 '}';
     }
 

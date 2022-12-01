@@ -45,7 +45,7 @@
         <property name="clazz.cName" value="火箭班"></property>
     </bean>
 
-    <!--  setter注入,为类类型的属性赋值 方式二：内部Bean -->
+    <!--  setter注入,为类类型的属性赋值 方式三：内部Bean -->
     <bean id="studentBean5" class="com.qiji.pojo.Student">
         <property name="stuId" value="3"></property>
         <property name="stuName" value="王五"></property>
@@ -58,5 +58,25 @@
                 <property name="cName" value="飞黄腾达班"></property>
             </bean>
         </property>
+    </bean>
+
+    <!--  setter注入,为数组类型的属性赋值-->
+    <bean id="studentBean6" class="com.qiji.pojo.Student">
+        <property name="stuId" value="3"></property>
+        <property name="stuName" value="赵六"></property>
+        <property name="age" value="40"></property>
+        <property name="sex" value="女"></property>
+        <property name="hobby">
+            <array>
+                <value>抽烟</value>
+                <value>喝酒</value>
+                <value>烫头</value>
+            </array>
+        </property>
+        <property name="clazz" ref="clazzBean3"></property>
+    </bean>
+    <bean id="clazzBean3" class="com.qiji.pojo.Clazz">
+        <constructor-arg value="1004"></constructor-arg>
+        <constructor-arg value="远大前程"></constructor-arg>
     </bean>
 </beans>

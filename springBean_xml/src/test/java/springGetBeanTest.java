@@ -52,4 +52,14 @@ public class springGetBeanTest {
         Student st5 = ca.getBean("studentBean5", Student.class);
         System.out.println(st5);
     }
+
+    /**
+     * springBean为数组类型的属性赋值
+     */
+    @Test
+    public void springBeanSetValueToArraryTypeTest(){
+        ApplicationContext ca = new ClassPathXmlApplicationContext("applicationContext.xml");
+        Student st6 = ca.getBean("studentBean6", Student.class);
+        System.out.println(st6);
+    }
 }
