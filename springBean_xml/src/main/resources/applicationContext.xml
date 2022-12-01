@@ -106,4 +106,78 @@
         <ref bean="studentBean5"></ref>
         <ref bean="studentBean4"></ref>
     </util:list>
+
+    <!--    依赖注入之为map集合类型属性赋值，方式一：内部使用map标签-->
+    <bean id="studentBean7" class="com.qiji.pojo.Student">
+        <property name="stuId" value="3"></property>
+        <property name="stuName" value="赵六"></property>
+        <property name="age" value="40"></property>
+        <property name="sex" value="女"></property>
+        <property name="hobby">
+            <array>
+                <value>抽烟</value>
+                <value>喝酒</value>
+                <value>烫头</value>
+            </array>
+        </property>
+        <property name="clazz" ref="clazzBean3"></property>
+        <property name="teacherMap">
+            <map>
+                <entry>
+                    <key>
+                        <value>00001</value>
+                    </key>
+                    <ref bean="teacherOne"></ref>
+                </entry>
+                <entry>
+                    <key>
+                        <value>00002</value>
+                    </key>
+                    <ref bean="teacherTwo"></ref>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="teacherOne" class="com.qiji.pojo.Teacher">
+        <property name="tId" value="00001"></property>
+        <property name="tName" value="赵老师"></property>
+    </bean>
+    <bean id="teacherTwo" class="com.qiji.pojo.Teacher">
+        <property name="tId" value="00002"></property>
+        <property name="tName" value="王老师"></property>
+    </bean>
+
+    <!--    依赖注入之为map集合类型属性赋值，方式二：使用util:map约束-->
+    <bean id="studentBean8" class="com.qiji.pojo.Student">
+        <property name="stuId" value="3"></property>
+        <property name="stuName" value="赵六"></property>
+        <property name="age" value="40"></property>
+        <property name="sex" value="女"></property>
+        <property name="hobby">
+            <array>
+                <value>抽烟</value>
+                <value>喝酒</value>
+                <value>烫头</value>
+            </array>
+        </property>
+        <property name="clazz" ref="clazzBean3"></property>
+        <property name="teacherMap" ref="teacherMap">
+
+        </property>
+    </bean>
+    <util:map id="teacherMap">
+        <entry>
+            <key>
+                <value>00003</value>
+            </key>
+            <ref bean="teacherOne"></ref>
+        </entry>
+        <entry>
+            <key>
+                <value>00004</value>
+            </key>
+            <ref bean="teacherTwo"></ref>
+        </entry>
+    </util:map>
 </beans>

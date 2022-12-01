@@ -79,4 +79,21 @@ public class springGetBeanTest {
         Clazz cl5 = ca.getBean("clazzBean5", Clazz.class);
         System.out.println(cl5);
     }
+
+    /**
+     * 为Map类型的属性赋值
+     */
+    @Test
+    public void springBeanSetValueToMapTypeTest(){
+        ApplicationContext ca = new ClassPathXmlApplicationContext("applicationContext.xml");
+        Student st7 = ca.getBean("studentBean7", Student.class);
+        System.out.println(st7);
+    }
+
+    @Test
+    public void springBeanSetValueToMapType2Test(){
+        ApplicationContext ca = new ClassPathXmlApplicationContext("applicationContext.xml");
+        Student st8 = ca.getBean("studentBean8", Student.class);
+        System.out.println(st8);
+    }
 }

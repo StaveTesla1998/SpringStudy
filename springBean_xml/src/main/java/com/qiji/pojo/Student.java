@@ -1,6 +1,7 @@
 package com.qiji.pojo;
 
 import java.util.Arrays;
+import java.util.Map;
 
 public class Student {
     private Integer stuId;
@@ -12,6 +13,8 @@ public class Student {
 
     private String[] hobby;
 
+    private Map<String,Teacher> teacherMap;
+
     public Student() {
     }
 
@@ -22,6 +25,16 @@ public class Student {
         this.sex = sex;
         this.clazz = clazz;
         this.hobby = hobby;
+    }
+
+    public Student(Integer stuId, String stuName, Integer age, String sex, Clazz clazz, String[] hobby, Map<String, Teacher> teacherMap) {
+        this.stuId = stuId;
+        this.stuName = stuName;
+        this.age = age;
+        this.sex = sex;
+        this.clazz = clazz;
+        this.hobby = hobby;
+        this.teacherMap = teacherMap;
     }
 
     public Integer getStuId() {
@@ -72,6 +85,14 @@ public class Student {
         this.hobby = hobby;
     }
 
+    public Map<String, Teacher> getTeacherMap() {
+        return teacherMap;
+    }
+
+    public void setTeacherMap(Map<String, Teacher> teacherMap) {
+        this.teacherMap = teacherMap;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -81,6 +102,7 @@ public class Student {
                 ", sex='" + sex + '\'' +
                 ", clazz=" + clazz +
                 ", hobby=" + Arrays.toString(hobby) +
+                ", teacherMap=" + teacherMap +
                 '}';
     }
 
