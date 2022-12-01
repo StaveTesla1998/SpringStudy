@@ -38,4 +38,11 @@ public class springGetBeanTest {
         Student st3 = ca.getBean("studentBean3", Student.class);
         System.out.println(st3);
     }
+
+    @Test
+    public void springBeanSetValueByJilianTest(){
+        ApplicationContext ca = new ClassPathXmlApplicationContext("applicationContext.xml");
+        Student st4 = ca.getBean("studentBean4", Student.class);
+        System.out.println(st4);
+    }
 }

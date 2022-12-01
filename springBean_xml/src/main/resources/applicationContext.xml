@@ -20,7 +20,7 @@
         <constructor-arg value="女"></constructor-arg>
     </bean>
     -->
-<!--  setter注入,为类类型的属性赋值  -->
+<!--  setter注入,为类类型的属性赋值 方式一：引用外部Bean -->
     <bean id="studentBean3" class="com.qiji.pojo.Student">
         <property name="stuId" value="3"></property>
         <property name="stuName" value="王五"></property>
@@ -31,5 +31,17 @@
     <bean id="clazzBean1" class="com.qiji.pojo.Clazz">
         <constructor-arg value="1001"></constructor-arg>
         <constructor-arg value="三年二班"></constructor-arg>
+    </bean>
+
+    <!--  setter注入,为类类型的属性赋值 方式二：级联 -->
+    <bean id="studentBean4" class="com.qiji.pojo.Student">
+        <property name="stuId" value="3"></property>
+        <property name="stuName" value="王五"></property>
+        <property name="age" value="30"></property>
+        <property name="sex" value="女"></property>
+<!--        级联的方式必须要先为类类型先赋值，然后再用点值法赋值-->
+        <property name="clazz" ref="clazzBean1"></property>
+        <property name="clazz.cId" value="1002"></property>
+        <property name="clazz.cName" value="火箭班"></property>
     </bean>
 </beans>
