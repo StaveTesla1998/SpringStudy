@@ -1,3 +1,4 @@
+import com.qiji.pojo.Clazz;
 import com.qiji.pojo.Student;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -61,5 +62,15 @@ public class springGetBeanTest {
         ApplicationContext ca = new ClassPathXmlApplicationContext("applicationContext.xml");
         Student st6 = ca.getBean("studentBean6", Student.class);
         System.out.println(st6);
+    }
+
+    /**
+     * 为集合类型的属性赋值
+     */
+    @Test
+    public void springBeanSetValueToListTypeTest(){
+        ApplicationContext ca = new ClassPathXmlApplicationContext("applicationContext.xml");
+        Clazz cl4 = ca.getBean("clazzBean4", Clazz.class);
+        System.out.println(cl4);
     }
 }

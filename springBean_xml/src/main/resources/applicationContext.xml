@@ -6,7 +6,7 @@
     <bean id="StudentBen" class="com.qiji.pojo.Student"></bean>
 
     <bean id="StudentBean1" class="com.qiji.pojo.Student">
-<!--        setter注入,使用property标签-->
+        <!--        setter注入,使用property标签-->
         <property name="stuId" value="1"></property>
         <property name="stuName" value="张三"></property>
         <property name="age" value="23"></property>
@@ -20,7 +20,7 @@
         <constructor-arg value="女"></constructor-arg>
     </bean>
     -->
-<!--  setter注入,为类类型的属性赋值 方式一：引用外部Bean -->
+    <!--  setter注入,为类类型的属性赋值 方式一：引用外部Bean -->
     <bean id="studentBean3" class="com.qiji.pojo.Student">
         <property name="stuId" value="3"></property>
         <property name="stuName" value="王五"></property>
@@ -39,7 +39,7 @@
         <property name="stuName" value="王五"></property>
         <property name="age" value="30"></property>
         <property name="sex" value="女"></property>
-<!--        级联的方式必须要先为类类型先赋值，然后再用点值法赋值-->
+        <!--        级联的方式必须要先为类类型先赋值，然后再用点值法赋值-->
         <property name="clazz" ref="clazzBean1"></property>
         <property name="clazz.cId" value="1002"></property>
         <property name="clazz.cName" value="火箭班"></property>
@@ -78,5 +78,20 @@
     <bean id="clazzBean3" class="com.qiji.pojo.Clazz">
         <constructor-arg value="1004"></constructor-arg>
         <constructor-arg value="远大前程"></constructor-arg>
+    </bean>
+
+    <!--    依赖注入之为list集合类型属性赋值，方式一：内部使用list标签-->
+    <bean id="clazzBean4" class="com.qiji.pojo.Clazz">
+        <constructor-arg value="1005"></constructor-arg>
+        <constructor-arg value="卓越班"></constructor-arg>
+        <constructor-arg>
+            <list>
+                <ref bean="StudentBean1"></ref>
+                <ref bean="studentBean3"></ref>
+                <ref bean="studentBean4"></ref>
+                <ref bean="studentBean5"></ref>
+                <ref bean="studentBean6"></ref>
+            </list>
+        </constructor-arg>
     </bean>
 </beans>
