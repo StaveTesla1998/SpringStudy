@@ -6,15 +6,17 @@ public class Student {
 
     private Integer age;
     private String sex;
+    private Clazz clazz;
 
     public Student() {
     }
 
-    public Student(Integer stuId, String stuName, Integer age, String sex) {
+    public Student(Integer stuId, String stuName, Integer age, String sex, Clazz clazz) {
         this.stuId = stuId;
         this.stuName = stuName;
         this.age = age;
         this.sex = sex;
+        this.clazz = clazz;
     }
 
     public Integer getStuId() {
@@ -49,6 +51,14 @@ public class Student {
         this.sex = sex;
     }
 
+    public Clazz getClazz() {
+        return clazz;
+    }
+
+    public void setClazz(Clazz clazz) {
+        this.clazz = clazz;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -56,6 +66,7 @@ public class Student {
                 ", stuName='" + stuName + '\'' +
                 ", age=" + age +
                 ", sex='" + sex + '\'' +
+                ", clazz=" + clazz +
                 '}';
     }
 

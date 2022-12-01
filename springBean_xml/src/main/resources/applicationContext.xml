@@ -12,10 +12,24 @@
         <property name="age" value="23"></property>
         <property name="sex" value="男"></property>
     </bean>
+    <!-- 构造器注入，使用constructor-arg关键字
     <bean id="studentBean2" class="com.qiji.pojo.Student">
         <constructor-arg value="2"></constructor-arg>
         <constructor-arg value="李四"></constructor-arg>
         <constructor-arg value="30"></constructor-arg>
         <constructor-arg value="女"></constructor-arg>
+    </bean>
+    -->
+<!--  setter注入,为类类型的属性赋值  -->
+    <bean id="studentBean3" class="com.qiji.pojo.Student">
+        <property name="stuId" value="3"></property>
+        <property name="stuName" value="王五"></property>
+        <property name="age" value="30"></property>
+        <property name="sex" value="女"></property>
+        <property name="clazz" ref="clazzBean1"></property>
+    </bean>
+    <bean id="clazzBean1" class="com.qiji.pojo.Clazz">
+        <constructor-arg value="1001"></constructor-arg>
+        <constructor-arg value="三年二班"></constructor-arg>
     </bean>
 </beans>
