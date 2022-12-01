@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
     <bean id="StudentBen" class="com.qiji.pojo.Student"></bean>
 
@@ -94,4 +94,16 @@
             </list>
         </constructor-arg>
     </bean>
+
+    <!--    依赖注入之为list集合类型属性赋值，方式二：外部使用util：list的约束-->
+    <bean id="clazzBean5" class="com.qiji.pojo.Clazz">
+        <constructor-arg value="1005"></constructor-arg>
+        <constructor-arg value="卓越班"></constructor-arg>
+        <constructor-arg ref="studentList"></constructor-arg>
+    </bean>
+    <util:list id="studentList">
+        <ref bean="studentBean6"></ref>
+        <ref bean="studentBean5"></ref>
+        <ref bean="studentBean4"></ref>
+    </util:list>
 </beans>

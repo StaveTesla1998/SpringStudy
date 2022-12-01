@@ -73,4 +73,10 @@ public class springGetBeanTest {
         Clazz cl4 = ca.getBean("clazzBean4", Clazz.class);
         System.out.println(cl4);
     }
+    @Test
+    public void springBeanSetValueToListType2Test(){
+        ApplicationContext ca = new ClassPathXmlApplicationContext("applicationContext.xml");
+        Clazz cl5 = ca.getBean("clazzBean5", Clazz.class);
+        System.out.println(cl5);
+    }
 }
