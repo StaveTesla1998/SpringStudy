@@ -1,3 +1,5 @@
+package com.qiji.spring.test;
+
 import com.alibaba.druid.pool.DruidDataSource;
 import com.qiji.pojo.Clazz;
 import com.qiji.pojo.Student;
