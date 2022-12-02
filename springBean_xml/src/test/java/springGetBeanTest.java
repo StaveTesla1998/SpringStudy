@@ -1,8 +1,11 @@
+import com.alibaba.druid.pool.DruidDataSource;
 import com.qiji.pojo.Clazz;
 import com.qiji.pojo.Student;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.sql.SQLException;
 
 public class springGetBeanTest {
     @Test
@@ -95,5 +98,20 @@ public class springGetBeanTest {
         ApplicationContext ca = new ClassPathXmlApplicationContext("applicationContext.xml");
         Student st8 = ca.getBean("studentBean8", Student.class);
         System.out.println(st8);
+    }
+
+    /**
+     * spring管理第三方Bean-duridDatasource
+     */
+    @Test
+    public void springManageDuridDatasourceTest() throws SQLException {
+        DruidDataSource druidDatasourceBean = new ClassPathXmlApplicationContext("spring-datasource.xml").getBean("druidDatasourceBean", DruidDataSource.class);
+        System.out.println(druidDatasourceBean.getConnection());
+    }
+
+    @Test
+    public void springManageDuridDatasourceTest1() throws SQLException {
+        DruidDataSource druidDatasourceBean = new ClassPathXmlApplicationContext("spring-datasource.xml").getBean("druidDatasourceBean1", DruidDataSource.class);
+        System.out.println(druidDatasourceBean.getConnection());
     }
 }
